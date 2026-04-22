@@ -1,0 +1,20 @@
+{
+  "framework": "nextjs",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 30
+    },
+    "app/api/certificates/issue/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/certificates/blockchain/register/route.ts": {
+      "maxDuration": 60
+    }
+  }
+}
